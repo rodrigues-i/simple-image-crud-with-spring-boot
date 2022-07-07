@@ -1,13 +1,13 @@
 # Simple Crud of Images
 
 ## Get all images
-```http://localhost/photoz```
+```http://localhost:8080/photoz```
 
 ## Get image by id
-```http://localhost/photoz/2```
+```http://localhost:8080/photoz/2```
 
 ## Acess this endpoint to upload an image
-```http://localhost/upload.html```
+```http://localhost:8080/upload.html```
 
 ## Download an image by id
-```http://localhost/download/2```
+```http://localhost:8080/download/2```
