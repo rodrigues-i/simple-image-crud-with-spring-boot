@@ -1,4 +1,7 @@
-package com.lucas.photoz.clone;
+package com.lucas.photoz.clone.web;
+
+import com.lucas.photoz.clone.model.Photo;
+import com.lucas.photoz.clone.service.PhotozService;
 
 import org.springframework.http.ContentDisposition;
 import org.springframework.http.HttpHeaders;
@@ -20,7 +23,7 @@ public class DownloadController {
 	}
 
 	@GetMapping("/download/{id}")
-	public ResponseEntity<byte[]> download(@PathVariable String id) {
+	public ResponseEntity<byte[]> download(@PathVariable Integer id) {
 		Photo photo = photozService.get(id);
 		if (photo == null)
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
