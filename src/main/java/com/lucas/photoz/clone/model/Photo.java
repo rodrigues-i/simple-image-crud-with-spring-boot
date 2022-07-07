@@ -1,5 +1,6 @@
 package com.lucas.photoz.clone;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.validation.constraints.NotEmpty;
 
 public class Photo {
@@ -8,6 +9,11 @@ public class Photo {
 
 	@NotEmpty
 	private String fileName;
+
+	private String contentType;
+
+	@JsonIgnore
+	private byte[] data;
 
 	// raw data
 
@@ -18,6 +24,14 @@ public class Photo {
 	public Photo(String id, String fileName) {
 		this.id = id;
 		this.fileName = fileName;
+	}
+
+	public byte[] getData() {
+		return data;
+	}
+
+	public void setData(byte[] data) {
+		this.data = data;
 	}
 
 	public String getId() {
@@ -35,5 +49,12 @@ public class Photo {
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
 	}
-	
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
+
+	public String getContentType() {
+		return contentType;
+	}
 }
